@@ -12,11 +12,13 @@ import UIKit
 
 typealias MyColor = UIColor
 typealias MyFont = UIFont
+typealias PlatformImage = UIImage
 #elseif os(macOS)
 import AppKit
 
 typealias MyColor = NSColor
 typealias MyFont = NSFont
+typealias PlatformImage = NSImage
 #else
 
 #endif

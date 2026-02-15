@@ -14,7 +14,7 @@ struct MyButton: View {
     let roundedCorner: Bool
     let borderStyle: BorderStyle
     let action: () -> Void
-    
+
     init(label: String, color: ButtonColor = .primary, size: ButtonSize = .medium, roundedCorner: Bool = true, borderStyle: BorderStyle = BorderStyle(), action: @escaping () -> Void) {
         self.label = label
         self.action = action
@@ -25,10 +25,14 @@ struct MyButton: View {
     }
 
     var body: some View {
-        Button(label) {
+        Button(action: {
             action()
-        }
-        .buttonStyle(PrimaryButtonStyle(color: color, size: size, roundedCorner: roundedCorner, borderStyle: borderStyle))
+        }, label: {
+            Text(label)
+                .font(.system(size: size.textSize))
+                .bold()
+        })
+        .buttonStyle(MyButtonStyle(color: color, size: size, roundedCorner: roundedCorner, borderStyle: borderStyle))
     }
 }
 

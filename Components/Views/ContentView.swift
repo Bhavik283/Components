@@ -16,8 +16,7 @@ struct ContentView: View {
             Text("Hello, world!")
             MyButton(
                 label: "Hello",
-                color: .custom(background: .blue, foreground: .white),
-                borderStyle: .init(width: 2, color: .gray)) {
+                color: .custom(background: .blue, foreground: .white), size: .xLarge) {
                 print(1)
             }
         }
