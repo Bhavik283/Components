@@ -28,8 +28,7 @@ enum ButtonSize {
         case .medium: return 12
         case .large: return 16
         case .custom(let size, let rad):
-            if let rad { return rad }
-            return size / 3
+            return rad ?? size / 3
         }
     }
 }

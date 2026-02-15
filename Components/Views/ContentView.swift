@@ -14,7 +14,10 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            MyButton(label: "Hello") {
+            MyButton(
+                label: "Hello",
+                color: .custom(background: .blue, foreground: .white),
+                borderStyle: .init(width: 2, color: .gray)) {
                 print(1)
             }
         }
@@ -24,4 +27,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(MyStyle())
 }

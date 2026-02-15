@@ -29,7 +29,7 @@ struct PrimaryButtonStyle: ButtonStyle {
         case .primary: Color.primary
         case .secondary: Color.secondary
         case .tertiary: Color.black
-        case .custom(let color, _): color
+        case .custom(_, let color): color ?? Color.primary
         }
     }
 
