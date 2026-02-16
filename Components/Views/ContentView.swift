@@ -9,15 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            MyButton(
-                label: "Hello",
-                color: .custom(background: .blue, foreground: .white), size: .xLarge) {
-                print(1)
+        ScrollView {
+            VStack {
+                ForEach(ButtonSize.allCases) { size in
+                    MyButton(
+                        label: "Button",
+                        color: .primary,
+                        size: size
+                    ) {
+                            print(1)
+                        }
+                }
+
+                Divider().padding()
+
+                ForEach(ButtonColor.allCases) { color in
+                    MyButton(
+                        label: "Button",
+                        color: color,
+                        size: .medium
+                    ) {
+                            print(1)
+                        }
+                }
             }
         }
         .padding()

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-enum IconSize {
+enum IconSize: EnumIterable {
+    static var allCases: [IconSize] = [.small, .medium, .large, .xLarge, .xxLarge, .custom(100)]
+
     case small
     case medium
     case large
@@ -27,7 +29,9 @@ enum IconSize {
     }
 }
 
-enum IconColor {
+enum IconColor: EnumIterable {
+    static var allCases: [IconColor] = [.primary, .secondary, .tertiary, .custom(.blue)]
+
     case primary
     case secondary
     case tertiary

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-enum ButtonSize {
+enum ButtonSize: EnumIterable {
+    static var allCases: [ButtonSize] = [.small, .medium, .large, .xLarge, .custom(height: 100, radius: 25)]
+
     case small
     case medium
     case large
@@ -55,24 +57,28 @@ enum ButtonSize {
     }
 }
 
-enum ButtonColor {
+enum ButtonColor: EnumIterable {
+    static var allCases: [ButtonColor] = [.primary, .secondary, .tertiary, .custom(background: .blue, foreground: .white)]
+
     case primary
     case secondary
     case tertiary
     case custom(background: Color, foreground: Color?)
 }
 
-enum IconButtonKind {
+enum IconButtonKind: EnumIterable {
     case iconOnly
     case filled
 }
 
-enum IconButtonSize {
+enum IconButtonSize: EnumIterable {
+    static var allCases: [IconButtonSize] = [.small, .medium, .large, .xLarge, .custom(100)]
+
     case small
     case medium
     case large
     case xLarge
-    case custom(height: CGFloat)
+    case custom(CGFloat)
 
     var size: CGFloat {
         switch self {

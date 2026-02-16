@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+protocol EnumIterable: CaseIterable, Hashable, Identifiable
+where AllCases == [Self] { }
+
+extension EnumIterable {
+    static var allValues: [Self] {
+        Array(allCases)
+    }
+
+    var id: Self {
+        self
+    }
+}
+
 struct BorderStyle {
     let width: CGFloat
     let color: Color
